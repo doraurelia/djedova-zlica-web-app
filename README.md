@@ -1,8 +1,12 @@
-# Express Server Application: 
+# Express Server Application
 
-Web aplikacija zasnovana na Node.js i Express okviru. Projekt uključuje posluživanje statičkih datoteka (CSS, resursi, JS klijent skripte) te podržava dinamičko određivanje porta ovisno o okruženju poslužitelja.
+* **Autor:** Dora Kovačević
+* **Datum:** Listopad 2026.
 
-## Tehnologije
+# O projektu  
+Web aplikacija zasnovana na Node.js i Express okviru. Projekt uključuje posluživanje statičkih datoteka (CSS, resursi, JS klijent skripte) i dinamičko kreiranje sadržaja te podržava dinamičko određivanje porta ovisno o okruženju poslužitelja.
+
+## Korištene tehnologije
 
 * **Node.js (v18+) i Express.js (^5.2.1)** za programiranje na strani poslužitelja  
 * **JavaScript** za programiranje na klijentskoj strani
