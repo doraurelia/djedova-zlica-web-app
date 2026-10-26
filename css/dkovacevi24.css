@@ -1,0 +1,419 @@
+/*osnovne postavke*/
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+h1 {
+    font-weight: 900;
+    color: rgb(243, 7, 86);
+    margin-left: 1vw;
+}
+
+h2 {
+    font-weight: 600;
+    color: rgb(241, 55, 117);
+    margin-left: 1vw;
+}
+
+
+/*navigacija: u jednom redu, s razmakom , boja, aktivna stranica označena itd.*/
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    margin-right: 1vw;
+    width: 98vw;
+}
+
+nav a {
+    display: block;
+    float: right;
+    margin-left: 20px;
+    text-decoration: none;
+    color: rgb(255, 112, 159);
+}
+
+nav a:hover {
+    transition: color 0.4s ease;
+    color: rgb(255, 7, 90);
+}
+
+nav a.aktivna {
+    color: rgb(255, 7, 90);
+    text-decoration: underline;
+}
+
+/*podnožje: boja, poravnanje, slika*/
+footer {
+    width: 95vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-content: center;
+    align-items: center;
+    color: rgb(243, 7, 86);
+}
+
+footer img {
+    /*slika HTML-5 u podnožju*/
+    width: 3vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/*animacija na početnoj stranici: sladoled*/
+@keyframes padniKugla {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        /*pojavljuje se odozdo prema gore*/
+    }
+}
+
+.sladoled {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.donjiRed {
+    display: flex;
+    flex-direction: row;
+}
+
+.kugla {
+    width: 10vw;
+    /*radi responzivnosti koristim vw kao viewport width*/
+    height: 10vw;
+    border-radius: 50%;
+    margin-bottom: -3vw;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: padniKugla 0.5s ease-out forwards;
+}
+
+.cokolada {
+    background-color: chocolate;
+    animation-delay: 1.5s;
+}
+
+.jagoda {
+    background-color: rgb(247, 148, 148);
+    animation-delay: 1s;
+    /*da se ne pojave sve kuglice istovremeno*/
+}
+
+.jabuka {
+    background-color: rgb(199, 202, 174);
+    animation-delay: 0.5s;
+}
+
+.kornet {
+    border-left: 7vw solid transparent;
+    border-right: 7vw solid transparent;
+    border-top: 14vw solid #ecc68b;
+    z-index: 3;
+    animation: pojaviSe 1.5s ease-in-out;
+    /*animacija korištena i kod galerije*/
+}
+
+article {
+    /*koristi se trenutno samo kod O nama pa može i implicitni selektor*/
+    display: block;
+    margin-left: 2%;
+    margin-right: 2%;
+    text-align: justify;
+}
+
+.galerija {
+    /*animirana galerija*/
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1vw;
+    padding: 2vw;
+}
+
+.stavka {
+    /*odnosi se na stavku animirane galerije*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    border-radius: 5%;
+    background-color: rgb(241, 204, 217);
+    font-weight: 700;
+    color: rgb(241, 55, 117);
+    padding: 1vw;
+}
+
+.galerijaSlika {
+    /*odnosi se na sliku u galeriji*/
+    max-width: 98vw;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+    animation: pojaviSe 2s ease-in-out;
+}
+
+/*za animaciju galerije:*/
+@keyframes pojaviSe {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.galerija img {
+    width: 50%;
+    animation: pojaviSe 1s ease-in-out;
+}
+
+.galerija img:hover {
+    width: 80%;
+}
+
+.tablica {
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    width: 90vw;
+    margin-left: 4vw;
+}
+
+table caption {
+    font-weight: bolder;
+    color: #f13775;
+    padding: 1vw;
+}
+
+.zaglavljeTablice {
+    font-weight: bolder;
+    color: #f13775;
+    padding: 1vw;
+    margin: 0;
+    border: 3px solid #f13775;
+    text-align: center;
+    background-color: #f1ceda;
+}
+
+td {
+    border: 3px solid #f13775;
+    color: #f13775;
+    text-align: center;
+    padding: 0.5vw;
+}
+
+td:first-child {
+    background-color: #f1ceda;
+    border: 3px solid #f13775;
+}
+
+#hamburger {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: default;
+    /* da se na računalu (default) ne može kliknuti */
+    pointer-events: none;
+}
+
+.kontrola {
+    width: 90vw;
+    margin: 1em 5%;
+    color: #f13775;
+    font-weight: bold;
+}
+
+.kontrola input {
+    padding: 0.4em;
+    border: 2px solid #f13775;
+    border-radius: 4px;
+    color: #f13775;
+}
+
+.moguceSortirati {
+    cursor: pointer;
+    user-select: none;
+}
+
+.moguceSortirati:hover {
+    background-color: #f13775;
+    color: white;
+}
+
+.moguceSortirati::after {
+    content: "⇅";
+    opacity: 0.5;
+    font-size: 0.8em;
+}
+
+.moguceSortirati.uzlazno::after {
+    content: "↑";
+    opacity: 1;
+}
+
+.moguceSortirati.silazno::after {
+    content: "↓";
+    opacity: 1;
+}
+
+.samoManjiEkran {
+    display: none;
+}
+
+/*računalo i veći ekrani: navigacija u jednom retku itd.*/
+@media only screen and (min-width: 1025px) {
+    header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: min-content;
+        justify-content: start;
+    }
+
+    .ikona {
+        width: 150px;
+        display: block;
+    }
+
+    footer {
+        bottom: 0;
+    }
+
+    main {
+        margin-bottom: 3%;
+    }
+
+
+}
+
+/*tablet: */
+@media only screen and (min-width: 746px) and (max-width: 1024px) {
+    nav ul li {
+        display: block;
+        float: right;
+        margin-left: 20px;
+    }
+
+    header img {
+        float: left;
+        width: 5%;
+        margin-left: 1px;
+        margin-top: 0px;
+    }
+
+    #hamburger {
+        cursor: pointer;
+        pointer-events: auto;
+    }
+
+    #navigacija {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #navigacija.otvoreno {
+        display: flex;
+    }
+
+    #navigacija a {
+        padding: 0.8em 1em;
+        border-bottom: 1px solid #ccc;
+    }
+}
+
+/*mobitel:*/
+@media only screen and (max-width: 745px) {
+    header img {
+        float: left;
+        width: 25vw;
+        margin-left: 3vw;
+        margin-top: 0;
+    }
+
+    #hamburger {
+        cursor: pointer;
+        pointer-events: auto;
+    }
+
+    #navigacija {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #navigacija.otvoreno {
+        display: flex;
+    }
+
+    #navigacija a {
+        padding: 0.8em 1em;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .galerija {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .tablica {
+        display: block;
+        max-width: 80vw;
+        margin-left: 10vw;
+    }
+
+    .zaglavljeTablice {
+        display: none;
+    }
+
+    td:before {
+        content: attr(data-label);
+        display: flex;
+        flex-shrink: 0;
+        justify-content: space-between;
+        width: 45%;
+        text-align: left;
+        font-weight: bold;
+        color: #f13775;
+    }
+
+    td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
+        border-bottom: 1px solid #eee;
+        text-align: right;
+
+    }
+
+    td:last-child {
+        margin-bottom: 5vw;
+        border-bottom: 1px solid #f13775;
+    }
+
+    h1, h2 {
+        display: block;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .samoManjiEkran {
+        display: inline-block;
+    }
+
+    #sortManjiEkran {
+        margin-left: 0.5em;
+        padding: 0.4em;
+        border: 2px solid #f13775;
+        color: #f13775;
+    }
+}

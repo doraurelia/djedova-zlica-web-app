@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="Dora Kovačević">
+		<title>Nutritivne vrijednosti</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../css/dkovacevi24.css">
+		<script src="../js/klijent/dkovacevi24.js"></script>
+	</head>
+
+	<body>
+		<header>
+			<button id="hamburger">
+				<img class="ikona" src="../resursi/slike/ikona.png" alt="ikona">
+			</button>
+			<nav id="navigacija" class="nav">
+				<a href="./index.html">Početna stranica</a>
+				<a href="./onama.html">O nama</a>
+				<a href="./okusi.html">Okusi sladoleda</a>
+				<a href="./nutri.html">Nutritivne vrijednosti i alergeni</a>
+				<a href="./narudzba.html">Narudžba</a>
+				<a href="./preporuke.html">Preporuke</a>
+				<a href="./dokumentacija.html">Dokumentacija</a>
+			</nav>
+		</header>
+		<main>
+			<h1>Nutritivne vrijednosti na 100 g proizvoda</h1>
+			<div class="kontrola">
+				<label for="pretrazivanje">Pretraži okus: </label>
+				<input type="text" id="pretrazivanje" name="pretrazivanje"
+					placeholder="npr. čokolada">
+
+				<label for="sortManjiEkran" class="samoManjiEkran">Sortiraj po: </label>
+				<select id="sortManjiEkran" name="sortManjiEkran" class="samoManjiEkran">
+					<option value="bez sortiranja">-- bez sortiranja --</option>
+					<option value="1-uzlazno">Energija (kJ) ↑</option>
+					<option value="1-silazno">Energija (kJ) ↓</option>
+					<option value="2-uzlazno">Energija (kcal) ↑</option>
+					<option value="2-silazno">Energija (kcal) ↓</option>
+					<option value="3-uzlazno">Masti ↑</option>
+					<option value="3-silazno">Masti ↓</option>
+					<option value="4-uzlazno">Ugljikohidrati ↑</option>
+					<option value="4-silazno">Ugljikohidrati ↓</option>
+					<option value="5-uzlazno">Proteini ↑</option>
+					<option value="5-silazno">Proteini ↓</option>
+				</select>
+			</div>
+			<table class="tablica">
+				<caption>Tablica nutritivnih vrijednosti</caption>
+				<thead>
+					<tr>
+						<th class="zaglavljeTablice">Okus</th>
+						<th colspan="2" class="zaglavljeTablice">Energija</th>
+						<th class="zaglavljeTablice moguceSortirati" data-column="3">Masti
+							(g)</th>
+						<th class="zaglavljeTablice moguceSortirati"
+							data-column="4">Ugljikohidrati (g)</th>
+						<th class="zaglavljeTablice moguceSortirati" data-column="5">Proteini
+							(g)</th>
+						<th class="zaglavljeTablice">Alergeni</th>
+					</tr>
+					<tr>
+						<th class="zaglavljeTablice"></th>
+						<th class="zaglavljeTablice moguceSortirati" data-column="1">kJ</th>
+						<th class="zaglavljeTablice moguceSortirati" data-column="2">kcal</th>
+						<th class="zaglavljeTablice">g</th>
+						<th class="zaglavljeTablice">g</th>
+						<th class="zaglavljeTablice">g</th>
+						<th class="zaglavljeTablice"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td data-label="Okus">čokolada</td>
+						<td data-label="Energija (kJ)">732</td>
+						<td data-label="Energija (kcal)">175</td>
+						<td data-label="Masti (g)">12</td>
+						<td data-label="Ugljikohidrati (g)">18</td>
+						<td data-label="Proteini (g)">3.5</td>
+						<td data-label="Alergeni">mlijeko, lješnjak u tragovima</td>
+					</tr>
+					<tr>
+						<td data-label="Okus">jabuka</td>
+						<td data-label="Energija (kJ)">502</td>
+						<td data-label="Energija (kcal)">120</td>
+						<td data-label="Masti (g)">1</td>
+						<td data-label="Ugljikohidrati (g)">25</td>
+						<td data-label="Proteini (g)">0.5</td>
+						<td data-label="Alergeni">mlijeko</td>
+					</tr>
+					<tr>
+						<td data-label="Okus">jagoda</td>
+						<td data-label="Energija (kJ)">628</td>
+						<td data-label="Energija (kcal)">150</td>
+						<td data-label="Masti (g)">9.5</td>
+						<td data-label="Ugljikohidrati (g)">21</td>
+						<td data-label="Proteini (g)">2.5</td>
+						<td data-label="Alergeni">mlijeko</td>
+					</tr>
+					<tr>
+						<td data-label="Okus">lješnjak</td>
+						<td data-label="Energija (kJ)">849</td>
+						<td data-label="Energija (kcal)">203</td>
+						<td data-label="Masti (g)">16.7</td>
+						<td data-label="Ugljikohidrati (g)">19</td>
+						<td data-label="Proteini (g)">4.5</td>
+						<td data-label="Alergeni">mlijeko, lješnjak</td>
+					</tr>
+					<tr>
+						<td data-label="Okus">malina</td>
+						<td data-label="Energija (kJ)">598</td>
+						<td data-label="Energija (kcal)">143</td>
+						<td data-label="Masti (g)">9</td>
+						<td data-label="Ugljikohidrati (g)">22</td>
+						<td data-label="Proteini (g)">2.5</td>
+						<td data-label="Alergeni">mlijeko, malina</td>
+					</tr>
+				</tbody>
+			</table>
+		</main>
+		<footer>
+			Dora Kovačević &copy; 2026.
+			<a
+				href="http://validator.w3.org/check?uri=spider.foi.hr/OWT/2026/zadaca_01/dkovacevi24/html/nutri.html">
+				<img src="../resursi/slike/HTML5.png" alt="HTML validacija">
+			</a>
+		</footer>
+	</body>
+
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="Dora Kovačević">
+		<title>Narudžba</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../css/dkovacevi24.css">
+		<link rel="stylesheet" href="../css/obrazac.css">
+		<script src="../js/klijent/dkovacevi24.js"></script>
+		<script src="../js/klijent/dkovacevi24_obrazac.js"></script>
+	</head>
+
+	<body>
+		<header>
+			<button id="hamburger">
+				<img class="ikona" src="../resursi/slike/ikona.png" alt="ikona">
+			</button>
+			<nav id="navigacija" class="nav">
+				<a href="./index.html">Početna stranica</a>
+				<a href="./onama.html">O nama</a>
+				<a href="./okusi.html">Okusi sladoleda</a>
+				<a href="./nutri.html">Nutritivne vrijednosti i alergeni</a>
+				<a href="./narudzba.html">Narudžba</a>
+				<a href="./preporuke.html">Preporuke</a>
+				<a href="./dokumentacija.html">Dokumentacija</a>
+			</nav>
+		</header>
+		<main>
+			<h1 class="naslovObrasca">Naručite svoj sladoled ili sladolednu tortu</h1>
+
+			<form method="POST"
+				action="https://spider.foi.hr/OWT/materijali/ispis_forme.php"
+				class="obrazac" id="obrazac">
+
+				<fieldset class="poljeObrasca">
+					<legend class="nazivPolja">Osobni podatci</legend>
+					<label for="ime" class="nazivPolja">Ime i
+						prezime * </label>
+					<div id="ime-greska" class="greska"></div>
+					<input type="text" id="ime" name="ime" placeholder="Frano Šimić"
+						maxlength="35" size="35">
+					<br>
+					<label for="email" class="nazivPolja">E-mail adresa * </label>
+					<div id="greska-email" class="greska"></div>
+					<input type="email" id="email" name="email" placeholder="frano@domena.com">
+					<br>
+
+					<label for="telefon" class="nazivPolja">Broj telefona </label>
+					<div id="greska-tel" class="greska"></div>
+					<input type="tel" id="telefon" name="telefon"
+						placeholder="+385 91 234 5678"> <br>
+				</fieldset>
+
+				<fieldset class="poljeObrasca">
+					<legend class="nazivPolja">Pakiranje * </legend>
+					<label><input type="radio" name="pakiranje" value="malo"> Malo
+						(0.5 kg sladoleda)</label>
+					<label><input type="radio" name="pakiranje" value="srednje"> Srednje (1
+						kg sladoleda)</label>
+					<label><input type="radio" name="pakiranje" value="veliko"> Veliko (2
+						kg sladoleda)</label>
+					<label><input type="radio" name="pakiranje" value="mala torta"> Mala torta
+					</label>
+					<label><input type="radio" name="pakiranje" value="velika torta"> Velika
+						torta
+					</label>
+				</fieldset>
+
+				<div id="greska-pak-okus" class="greska"></div>
+
+				<fieldset class="poljeObrasca">
+					<legend class="nazivPolja">Okus sladoleda ili torte * </legend>
+					<legend class="nazivPolja">Odaberite:
+						<ul>
+							<li>do tri okusa za malo pakiranje sladoleda</li>
+							<li>do pet okusa za srednje i veliko pakiranje sladoleda</li>
+							<li>do tri okusa za tortu bilo koje veličine</li>
+						</ul>
+					</legend>
+					<label><input type="checkbox" name="okus" value="cokolada">
+						čokolada</label>
+					<label><input type="checkbox" name="okus" value="jabuka">
+						jabuka</label>
+					<label><input type="checkbox" name="okus" value="jagoda"> jagoda</label>
+					<label><input type="checkbox" name="okus" value="ljesnjak">
+						lješnjak</label>
+					<label><input type="checkbox" name="okus" value="malina"> malina</label>
+				</fieldset> <br>
+
+				<fieldset class="poljeObrasca"><label for="kolicina"
+						class="nazivPolja">Količina (kom)
+						* </label>
+					<input type="number" id="kolicina" name="kolicina" min="1" max="20"
+						value="1"> <br>
+				</fieldset>
+
+				<fieldset class="poljeObrasca"> <label for="slika"
+						class="nazivPolja">Fotografija torte ako
+						imate posebnu želju ili
+						ideju za ukrašavanje </label>
+					<input type="file" id="slika" name="slika" accept="image/*">
+					<br>
+				</fieldset>
+
+				<div id="greska-torta" class="greska"></div>
+
+				<fieldset class="poljeObrasca">
+					<label for="napomene" class="nazivPolja">Posebne napomene </label>
+					<textarea id="napomene" name="napomene" rows="4" cols="20"
+						placeholder="npr. alergije, natpis na torti, posebni zahtjevi i prilagodbe..."></textarea>
+					<br>
+				</fieldset>
+
+				<fieldset class="poljeObrasca"><label for="dostava"
+						class="nazivPolja">Vrsta dostave *
+					</label>
+					<select id="dostava" name="dostava">
+						<option value="nije odabrano">-- Odaberite --</option>
+						<option value="osobno">Osobno preuzimanje</option>
+						<option value="dostava grad">Dostava unutar grada</option>
+						<option value="dostava Hrvatska">Dostava po Hrvatskoj</option>
+					</select>
+					<br>
+				</fieldset>
+
+				<div id="greska-datum" class="greska"></div>
+
+				<fieldset class="poljeObrasca"> <label for="datum"
+						class="nazivPolja">Željeni datum
+						preuzimanja (obvezno ako je preuzimanje
+						osobno ili je naručena torta)
+					</label>
+					<input type="date" id="datum" name="datum">
+					<br>
+				</fieldset>
+
+				<label class="nazivPolja">
+					<input type="checkbox" name="suglasnost" id="suglasnost"
+						value="suglasan/suglasna">
+					Slažem se s <a href="../resursi/slike/uvjeti_narudzbe.png"
+						class="ljubicastaPoveznica">uvjetima
+						narudžbe</a> *
+				</label> <div id="greska-suglasnost" class="greska"></div> <br>
+
+				<button type="submit" class="slanjePrilagodiGumb">Pošalji narudžbu</button>
+				<br>
+			</form>
+		</main>
+		<footer>
+			Dora Kovačević &copy; 2026.
+			<a
+				href="http://validator.w3.org/check?uri=spider.foi.hr/OWT/2026/zadaca_01/dkovacevi24/html/narudzba.html">
+				<img src="../resursi/slike/HTML5.png" alt="HTML validacija">
+			</a>
+		</footer>
+	</body>
+
+</html>

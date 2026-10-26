@@ -1,0 +1,53 @@
+.obrazac {
+    /*osnovno: stupčasti prikaz, boja teksta i razmak*/
+    color: rgb(241, 55, 117);
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.naslovObrasca {
+    /*da ga ne zbunjuje grid za formu*/
+    display: block;
+    width: 98%;
+}
+
+.poljeObrasca {
+    /*da svaki fieldset bude uokviren i responzivan (vw veličina)*/
+    display: flex;
+    width: 90vw;
+    border: 3px solid rgb(240, 82, 135);
+    padding: 1vw;
+    margin: 1vw;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nazivPolja {
+    font-weight: bolder;
+}
+
+.ljubicastaPoveznica {
+    /*odnosi se samo na poveznicu za uvjete narudžbe*/
+    color: rgb(229, 82, 240);
+}
+
+.slanjePrilagodiGumb {
+    /*da stilski bude usklađen s ostalim dijelovima (boja itd.)*/
+    background-color: rgb(240, 82, 135);
+    border-color: rgb(240, 12, 90);
+    color: rgb(100, 4, 36);
+    font-weight: bolder;
+    font-variant: small-caps;
+}
+
+/*za obavijesti o pogreškama kod unosa*/
+div {
+    color: #000;
+    font-weight: bolder;
+    display: flex;
+}
+
+.obrazac>div {
+    /*za one div koji su izravno u formi, ne u fieldsetovima*/
+    margin-left: 1vw;
+}
