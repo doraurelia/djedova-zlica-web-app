@@ -1,7 +1,7 @@
 # Express Server Application
 
 * **Autor:** Dora Kovačević
-* **Datum:** Listopad 2026.
+* **Datum:** svibanj 2026.
 
 # O projektu  
 Web aplikacija zasnovana na Node.js i Express okviru. Projekt uključuje posluživanje statičkih datoteka (CSS, resursi, JS klijent skripte) i dinamičko kreiranje sadržaja te podržava dinamičko određivanje porta ovisno o okruženju poslužitelja.
